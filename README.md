@@ -1,10 +1,12 @@
-# Indonesian-TTS-UI: A User Interface for Indonesian TTS Built with Gradio
+# Indonesian-TTS-UI: A Web Interface for Indonesian TTS Built with Gradio  
 
-This repository provides a web-based UI for [indonesian-tts by Wikidepia](https://github.com/Wikidepia/indonesian-tts). It is designed to make it easy for users to generate Indonesian speech from text, utilizing models finetuned on high-quality datasets.
+This repository provides a web-based UI for [Indonesian-TTS by Wikidepia](https://github.com/Wikidepia/indonesian-tts), making it easy to generate Indonesian speech from text. It utilizes models finetuned on high-quality datasets.  
 
-> **DO NOT USE FOR COMMERCIAL PURPOSES!**
+> **DO NOT USE FOR COMMERCIAL PURPOSES!**  
 
-![Screenshot 2025-02-06 161433](https://github.com/user-attachments/assets/29e07c73-a91f-44a9-8bd4-8de5feeb97a6)
+![Screenshot 2025-02-06 161433](https://github.com/user-attachments/assets/29e07c73-a91f-44a9-8bd4-8de5feeb97a6)  
+
+If you want to use a custom RVC model voice for Indonesian-TTS, check out [RVC-Indonesian-TTS-WebUI](https://github.com/ikoshura/RVC-Indonesian-TTS-WebUI).  
 
 ---
 
