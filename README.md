@@ -84,7 +84,6 @@ and configuration file (`config.json`) in the same folder as app.py or update th
    ├── app.py                  # Main application script
    ├── checkpoint.pth          # Model checkpoint
    ├── config.json             # Model configuration
-   ├── output.wav              # Example output file
    ├── README.md               # Project documentation
    ├── requirements.txt        # Dependencies
    ├── run(python-3.11).bat    # Windows batch script (Python 3.11)
