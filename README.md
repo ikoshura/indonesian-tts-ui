@@ -130,38 +130,6 @@ https://user-images.githubusercontent.com/72781956/184360026-c81ac336-c9f1-48ee-
 
 ---
 
-## Data
-
-- **Indonesian Azure TTS Dataset:** [Download Link](https://depia.wiki/files/azure-tts.tar)
-
----
-
-## Citations
-
-```bibtex
-@misc{https://doi.org/10.48550/arxiv.2106.06103,
-  doi = {10.48550/ARXIV.2106.06103},
-  url = {https://arxiv.org/abs/2106.06103},
-  author = {Kim, Jaehyeon and Kong, Jungil and Son, Juhee},
-  title = {Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech},
-  publisher = {arXiv},
-  year = {2021}
-}
-
-@inproceedings{kjartansson-etal-tts-sltu2018,
-  title = {A Step-by-Step Process for Building TTS Voices Using Open Source Data and Framework for Bangla, Javanese, Khmer, Nepali, Sinhala, and Sundanese},
-  author = {Keshan Sodimana and Knot Pipatsrisawat and Linne Ha and Martin Jansche and Oddur Kjartansson and Pasindu De Silva and Supheakmungkol Sarin},
-  booktitle = {Proc. The 6th Intl. Workshop on Spoken Language Technologies for Under-Resourced Languages (SLTU)},
-  year = {2018},
-  address = {Gurugram, India},
-  month = aug,
-  pages = {66--70},
-  URL = {http://dx.doi.org/10.21437/SLTU.2018-14}
-}
-```
-
----
-
 ## Credits
 
 - **Indonesian TTS:** [indonesian-tts](https://github.com/Wikidepia/indonesian-tts)
