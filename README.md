@@ -61,10 +61,13 @@ To set up the project, follow these steps:
    ```bash
    pip install -r requirements.txt
    ```
-
+   If you face issues installing Coqui TTS on Python 3.13 or newer, use Python 3.11 instead:
+   ```bash
+   py -3.11 -m pip install -r requirements.txt 
+   ```
    > **Note:** This project requires Coqui TTS to be installed. The `tts` command used in the code comes from the Coqui TTS package.
 
-4. **Download Model Files**
+5. **Download Model Files**
 
    You can find the models in the [Releases](https://github.com/Wikidepia/indonesian-tts/releases/) tab of the `indonesian-tts` repository.
    
