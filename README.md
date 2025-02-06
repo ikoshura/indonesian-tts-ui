@@ -13,8 +13,8 @@ This repository provides a web-based UI for [indonesian-tts by Wikidepia](https:
 - [Overview](#overview)
 - [Setup](#setup)
 - [Usage](#usage)
-- [Credits](#credits)
 - [Example](#example)
+- [Credits](#credits)
 
 ---
 
