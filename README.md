@@ -1,6 +1,6 @@
 # Indonesian-TTS-UI: A User Interface for Indonesian TTS Built with Gradio
 
-This repository provides a web-based UI for Indonesian text-to-speech (TTS) synthesis using Coqui TTS. It is designed to make it easy for users to generate Indonesian speech from text, utilizing models finetuned on high-quality datasets.
+This repository provides a web-based UI for [indonesian-tts by Wikidepia](https://github.com/Wikidepia/indonesian-tts). It is designed to make it easy for users to generate Indonesian speech from text, utilizing models finetuned on high-quality datasets.
 
 > **DO NOT USE FOR COMMERCIAL PURPOSES!**
 
@@ -91,10 +91,7 @@ and configuration file (`config.json`) in the same folder as app.py or update th
    ├── run.bat                 # Windows batch script
    └── speakers.pth            # Speaker embeddings
    ```
-
-
-This structure makes it clear and readable for anyone checking your project on GitHub! 🚀
-
+   
 ---
 
 ## Usage
