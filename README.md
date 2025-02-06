@@ -84,6 +84,12 @@ Run the application by opening the `run.bat` file or manually executing:
 python app.py
 ```
 
+If you face issues executing the file on Python 3.13 or newer, use Python 3.11 instead:
+
+```bash
+py -3.11 app.py
+```
+
 This will launch the Gradio web interface where you can:
 - Enter text in Indonesian.
 - Choose a speaker from the dropdown (the available speaker IDs are fetched dynamically).
