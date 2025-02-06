@@ -1,0 +1,3 @@
+TTS
+gradio
+git+https://github.com/Wikidepia/g2p-id
