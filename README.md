@@ -1,4 +1,4 @@
-# Indonesian TTS UI: A User Interface for Indonesian TTS Built with Gradio
+# Indonesian-TTS-UI: A User Interface for Indonesian TTS Built with Gradio
 
 This repository provides a web-based UI for Indonesian text-to-speech (TTS) synthesis using Coqui TTS. It is designed to make it easy for users to generate Indonesian speech from text, utilizing models finetuned on high-quality datasets.
 
