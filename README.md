@@ -69,7 +69,7 @@ To set up the project, follow these steps:
 
 5. **Download Model Files**
 
-   You can find the models in the [Releases](https://github.com/Wikidepia/indonesian-tts/releases/) tab of the `indonesian-tts` repository.
+   You can find the models in the [Releases](https://github.com/Wikidepia/indonesian-tts/releases/) tab of the [indonesian-tts](https://github.com/Wikidepia/indonesian-tts) repository.
    
    Make sure to place your model checkpoint (`checkpoint.pth`), speakers (`speakers.pth`)
 and configuration file (`config.json`) in the same folder as app.py or update the paths in the code accordingly.
