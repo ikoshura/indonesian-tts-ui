@@ -11,37 +11,18 @@ This repository provides a web-based UI for Indonesian text-to-speech (TTS) synt
 ## Table of Contents
 
 - [Overview](#overview)
-- [Model Changelog](#model-changelog)
 - [Setup](#setup)
 - [Usage](#usage)
 - [Data](#data)
 - [Citations](#citations)
 - [Credits](#credits)
+- [Example](#example)
 
 ---
 
 ## Overview
 
 This UI leverages Coqui TTS to synthesize Indonesian speech. It uses Gradio to provide a user-friendly interface and `g2p-id` for converting Indonesian text into phonemes before synthesis.
-
----
-
-## Model Changelog
-
-**v1.2 (Aug 12, 2022)**
-- Finetuned from the v1.1 model on:
-  - 4 hours of Audiobook dataset
-  - 2000 samples from Azure TTS
-  - High-quality TTS data for Javanese & Sundanese
-
-**v1.1 (Aug 6, 2022)**
-- Finetuned from the LJSpeech model on:
-  - 4 hours of Audiobook dataset
-  - 2000 samples from Azure TTS
-
-**v1.0 (Jun 23, 2022)**
-- Trained from scratch on:
-  - 4 hours of Audiobook dataset
 
 ---
 
@@ -104,6 +85,22 @@ This will launch the Gradio web interface where you can:
 - Enter text in Indonesian.
 - Choose a speaker from the dropdown (the available speaker IDs are fetched dynamically).
 - Listen to the synthesized speech.
+
+---
+
+## Example
+
+`Ardi (Azure)`:
+
+https://user-images.githubusercontent.com/72781956/183240414-b1127e83-6ddd-427c-b58d-386c377f15b4.mp4
+
+`Gadis (Azure)`:
+
+https://user-images.githubusercontent.com/72781956/183240420-a5d0d335-af4a-4563-a744-40f6795955c5.mp4
+
+`Wibowo (Audiobook)`:
+
+https://user-images.githubusercontent.com/72781956/184360026-c81ac336-c9f1-48ee-97fb-907d66b7f343.mp4
 
 ---
 
