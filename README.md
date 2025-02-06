@@ -74,6 +74,27 @@ To set up the project, follow these steps:
    Make sure to place your model checkpoint (`checkpoint.pth`), speakers (`speakers.pth`)
 and configuration file (`config.json`) in the same folder as app.py or update the paths in the code accordingly.
 
+6. **Project Directory Structure**
+
+   Make sure your directory looks like this:
+
+   ```
+   indonesian-tts-ui/
+   ├── venv/                   # Virtual environment
+   ├── app.py                  # Main application script
+   ├── checkpoint.pth          # Model checkpoint
+   ├── config.json             # Model configuration
+   ├── output.wav              # Example output file
+   ├── README.md               # Project documentation
+   ├── requirements.txt        # Dependencies
+   ├── run(python-3.11).bat    # Windows batch script (Python 3.11)
+   ├── run.bat                 # Windows batch script
+   └── speakers.pth            # Speaker embeddings
+   ```
+
+
+This structure makes it clear and readable for anyone checking your project on GitHub! 🚀
+
 ---
 
 ## Usage
