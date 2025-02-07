@@ -33,12 +33,15 @@ def get_speaker_idxs():
             mapping = {}
             counter = 1  # Untuk "Pembicara X"
 
-            for key in original_keys:
-                if re.match(r"^(JV|SU)-\d+$", key):  # Hanya ubah kode ini
-                    mapping[key] = f"Pembicara {counter}"
+            for key in speaker_dict.keys():
+                if re.match(r"^(JV|SU)-\d+$", key):
+                    if key.startswith("JV"):
+                        mapping[key] = f"Pembicara {counter} (Jawa)"
+                    else:  # key pasti diawali SU
+                        mapping[key] = f"Pembicara {counter} (Sunda)"
                     counter += 1
                 else:
-                    mapping[key] = key  # Biarkan tetap
+                    mapping[key] = key
 
             return mapping
         else:
