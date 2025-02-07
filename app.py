@@ -3,6 +3,9 @@ import gradio as gr
 from g2p_id import G2P
 import ast
 import re
+import webbrowser
+import threading
+import time
 
 # Inisialisasi modul G2P
 g2p = G2P()
@@ -22,13 +25,11 @@ def get_speaker_idxs():
             text=True
         )
         output = result.stdout
-        # Cari dictionary dalam output
         start_index = output.find("{")
         end_index = output.rfind("}")
         if start_index != -1 and end_index != -1:
             dict_str = output[start_index:end_index+1]
             speaker_dict = ast.literal_eval(dict_str)
-            original_keys = list(speaker_dict.keys())
             
             mapping = {}
             counter = 1  # Untuk "Pembicara X"
@@ -37,7 +38,7 @@ def get_speaker_idxs():
                 if re.match(r"^(JV|SU)-\d+$", key):
                     if key.startswith("JV"):
                         mapping[key] = f"Pembicara {counter} (Jawa)"
-                    else:  # key pasti diawali SU
+                    else:
                         mapping[key] = f"Pembicara {counter} (Sunda)"
                     counter += 1
                 else:
@@ -56,21 +57,15 @@ speaker_mapping = get_speaker_idxs()
 friendly_names = list(speaker_mapping.values())  # Untuk dropdown
 reverse_mapping = {v: k for k, v in speaker_mapping.items()}  # Untuk konversi balik
 
-print("Mapping speaker:", speaker_mapping)
-
 def generate_tts(text, friendly_speaker):
     """
     Konversi teks ke fonem menggunakan g2p-id,
     lalu sintetis audio dengan TTS berdasarkan pilihan speaker.
     """
     original_key = reverse_mapping.get(friendly_speaker, "wibowo")
-    
-    # Konversi teks ke fonem
     phoneme_text = g2p(text)
     print("Teks asli:", text)
     print("Hasil konversi fonem:", phoneme_text)
-    
-    # Jalankan perintah TTS
     command = (
         f"tts --text \"{phoneme_text}\" "
         f"--model_path checkpoint.pth "
@@ -80,19 +75,44 @@ def generate_tts(text, friendly_speaker):
     )
     print("Menjalankan perintah:", command)
     subprocess.run(command, shell=True, check=True)
-    
     return "output.wav"
 
-# Gradio Interface
+# Fungsi untuk menampilkan animasi loading di terminal
+def loading_animation(text="Sedang memuat interface indonesian-tts-ui", duration=5):
+    for i in range(duration):
+        for dots in range(1, 4):
+            print(f"\r{text}{'.'*dots}", end="", flush=True)
+            time.sleep(0.5)
+    print("\n")
+
+# Fungsi untuk membuka browser setelah server mulai
+def open_browser():
+    time.sleep(5)  # Beri waktu tunggu untuk server mulai
+    webbrowser.open("http://127.0.0.1:7860")
+
+# Gradio Interface dengan UI bahasa Indonesia
 interface = gr.Interface(
     fn=generate_tts,
     inputs=[
-        gr.Textbox(lines=2, placeholder="Masukkan teks...", label="Teks"),
-        gr.Dropdown(choices=friendly_names, label="Speaker")
+        gr.Textbox(lines=2, placeholder="Masukkan teks di sini...", label="Teks Input"),
+        gr.Dropdown(choices=friendly_names, label="Pilih Pembicara", allow_custom_value=True)
     ],
-    outputs=gr.Audio(label="Output Audio"),
-    title="TTS Generator Bahasa Indonesia"
+    outputs=gr.Audio(label="Hasil Audio"),
+    title="🌻 Generator Text-to-Speech Bahasa Indonesia",
+    description=(
+        "Aplikasi untuk menghasilkan suara dari teks dalam bahasa Indonesia. "
+        "Pilih pembicara dan masukkan teks lalu klik 'Hasilkan'.\n\n"
+        "🔊 Pembicara dengan label (Jawa) atau (Sunda) menggunakan model khusus aksen daerah tersebut."
+    ),
+    examples=[
+        ["Selamat pagi, bagaimana kabar Anda hari ini?", "Pembicara 1 (Jawa)"],
+        ["Halo, selamat datang di aplikasi text-to-speech kami.", "Pembicara 44 (Sunda)"],
+        ["Terima kasih telah menggunakan layanan ini.", "wibowo"]
+    ],
+    flagging_mode="never"  # Ganti dari allow_flagging ke flagging_mode
 )
 
 if __name__ == "__main__":
-    interface.launch()
+    loading_animation("Sedang memuat interface indonesian-tts-ui", duration=5)
+    threading.Thread(target=open_browser, daemon=True).start()
+    interface.launch(inbrowser=False, server_name="0.0.0.0")
