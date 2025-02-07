@@ -4,7 +4,8 @@ This repository provides a web-based UI for [Indonesian-TTS by Wikidepia](https:
 
 > **DO NOT USE FOR COMMERCIAL PURPOSES!**  
 
-![Screenshot 2025-02-06 161433](https://github.com/user-attachments/assets/29e07c73-a91f-44a9-8bd4-8de5feeb97a6)  
+![image](https://github.com/user-attachments/assets/2e3fcadc-b06a-47e9-acb4-bc4d62930a07)
+
 
 If you want to use a custom RVC model voice for Indonesian-TTS, check out [RVC-Indonesian-TTS-WebUI](https://github.com/ikoshura/RVC-Indonesian-TTS-WebUI).  
 
